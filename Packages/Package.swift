@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "Main",
-    platforms: [.macOS(.v14)],
+    platforms: [.macOS(.v13)],
     products: [
         .singleTargetLibrary("SnippetConverterCore"),
         .executable(name: "snippet-converter", targets: ["SnippetConverterCLI"])
