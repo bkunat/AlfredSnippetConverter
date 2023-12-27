@@ -2,6 +2,8 @@
 
 Easily convert Alfred Text Snippets into macOS Text Replacements.
 
+![header](https://github.com/bkunat/AlfredSnippetConverter/assets/79861311/2ed1ad8b-febe-4c58-9f0d-00d948fd0674)
+
 ## Features
 
 - Simple conversion of Alfred snippets to macOS format.
