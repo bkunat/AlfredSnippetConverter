@@ -14,7 +14,7 @@ Easily convert Alfred Text Snippets into macOS Text Replacements.
 
 ## Getting Started
 
-You can either build the project from source using Xcode or download one of the pre-built packages from the Releases tab on our GitHub page.
+You can either build the project from source using Xcode or download one of the pre-built packages from the Releases tab.
 
 ### Building CLI from the Command Line
 
@@ -33,7 +33,9 @@ You can either build the project from source using Xcode or download one of the 
 ### Exporting Snippets from Alfred
 
 1. [Export](https://www.alfredapp.com/help/features/snippets/#sharing) a Snippets Collection from Alfred.
-2. Extract the `.zip` archive using macOS Archive Utility app. Alfred Text Snippets are exported as `.zip` archives.
+2. Extract the `.zip` archive using macOS Archive Utility app. 
+
+> Alfred Text Snippets are exported as `.zip` archives.
 
 ### Converting with the CLI
 
@@ -49,4 +51,3 @@ Run the following command in the terminal:
 2. Select the directory containing the exported Snippets Collection from Alfred.
 3. Click "Convert".
 
-*An image illustrating the app interface will be provided soon.*
