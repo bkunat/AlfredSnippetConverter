@@ -49,4 +49,4 @@ Run the following command in the terminal:
 2. Select the directory containing the exported Snippets Collection from Alfred.
 3. Click "Convert".
 
-*An image illustrating the app interface will be provided soon.*
+<img width="640" alt="snippets-converter-macos-app" src="https://github.com/bkunat/AlfredSnippetConverter/assets/79861311/318d42f8-8823-4439-a4cb-60c50c2e5d6e">
