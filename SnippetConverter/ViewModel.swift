@@ -37,4 +37,49 @@ final class ViewModel: ObservableObject {
             self.error = error
         }
     }
+    
+    func validateDroppedPath(_ path: String) -> Bool {
+        let fileManager = FileManager.default
+        var isDirectory: ObjCBool = false
+        
+        // Check if path exists and is a directory
+        guard fileManager.fileExists(atPath: path, isDirectory: &isDirectory),
+              isDirectory.boolValue else {
+            error = ValidationError.notADirectory
+            return false
+        }
+        
+        // Check if directory contains at least one .json file
+        do {
+            let contents = try fileManager.contentsOfDirectory(atPath: path)
+            let hasJsonFiles = contents.contains { $0.hasSuffix(".json") }
+            
+            if !hasJsonFiles {
+                error = ValidationError.noJsonFiles
+                return false
+            }
+            
+            return true
+        } catch {
+            self.error = ValidationError.unableToReadDirectory
+            return false
+        }
+    }
+}
+
+enum ValidationError: LocalizedError {
+    case notADirectory
+    case noJsonFiles
+    case unableToReadDirectory
+    
+    var errorDescription: String? {
+        switch self {
+        case .notADirectory:
+            return "Please select a folder containing Alfred snippet files."
+        case .noJsonFiles:
+            return "The selected folder doesn't contain any Alfred snippet files (.json)."
+        case .unableToReadDirectory:
+            return "Unable to read the contents of the selected folder."
+        }
+    }
 }

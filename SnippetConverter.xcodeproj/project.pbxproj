@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B01DDA932E4E4C2100261FA6 /* DropZoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01DDA922E4E4C2100261FA6 /* DropZoneView.swift */; };
 		B02ABC572B320DED0059C1B5 /* SnippetConverterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02ABC562B320DED0059C1B5 /* SnippetConverterApp.swift */; };
 		B02ABC592B320DED0059C1B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02ABC582B320DED0059C1B5 /* ContentView.swift */; };
 		B02ABC5B2B320DEE0059C1B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02ABC5A2B320DEE0059C1B5 /* Assets.xcassets */; };
 		B02ABC5E2B320DEE0059C1B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02ABC5D2B320DEE0059C1B5 /* Preview Assets.xcassets */; };
 		B02ABC692B320DEF0059C1B5 /* SnippetConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02ABC682B320DEF0059C1B5 /* SnippetConverterTests.swift */; };
 		B02ABC732B320DEF0059C1B5 /* SnippetConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02ABC722B320DEF0059C1B5 /* SnippetConverterUITests.swift */; };
-		B02ABC752B320DEF0059C1B5 /* SnippetConverterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02ABC742B320DEF0059C1B5 /* SnippetConverterUITestsLaunchTests.swift */; };
 		B0539BB42B32172200A5243B /* SnippetConverterCore in Frameworks */ = {isa = PBXBuildFile; productRef = B0539BB32B32172200A5243B /* SnippetConverterCore */; };
 		B0539BB62B33125800A5243B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0539BB52B33125800A5243B /* ViewModel.swift */; };
 		B0539BB92B33205100A5243B /* View+errorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0539BB82B33205100A5243B /* View+errorAlert.swift */; };
@@ -37,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B01DDA922E4E4C2100261FA6 /* DropZoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropZoneView.swift; sourceTree = "<group>"; };
 		B02ABC532B320DED0059C1B5 /* SnippetConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnippetConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02ABC562B320DED0059C1B5 /* SnippetConverterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetConverterApp.swift; sourceTree = "<group>"; };
 		B02ABC582B320DED0059C1B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,7 +48,6 @@
 		B02ABC682B320DEF0059C1B5 /* SnippetConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetConverterTests.swift; sourceTree = "<group>"; };
 		B02ABC6E2B320DEF0059C1B5 /* SnippetConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnippetConverterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02ABC722B320DEF0059C1B5 /* SnippetConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetConverterUITests.swift; sourceTree = "<group>"; };
-		B02ABC742B320DEF0059C1B5 /* SnippetConverterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetConverterUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B0539BB12B320FC100A5243B /* Packages */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Packages; sourceTree = "<group>"; };
 		B0539BB52B33125800A5243B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		B0539BB82B33205100A5243B /* View+errorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+errorAlert.swift"; sourceTree = "<group>"; };
@@ -106,6 +106,7 @@
 				B0539BB72B33204200A5243B /* Utils */,
 				B02ABC562B320DED0059C1B5 /* SnippetConverterApp.swift */,
 				B02ABC582B320DED0059C1B5 /* ContentView.swift */,
+				B01DDA922E4E4C2100261FA6 /* DropZoneView.swift */,
 				B0539BB52B33125800A5243B /* ViewModel.swift */,
 				B02ABC5A2B320DEE0059C1B5 /* Assets.xcassets */,
 				B02ABC5F2B320DEE0059C1B5 /* SnippetConverter.entitlements */,
@@ -134,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				B02ABC722B320DEF0059C1B5 /* SnippetConverterUITests.swift */,
-				B02ABC742B320DEF0059C1B5 /* SnippetConverterUITestsLaunchTests.swift */,
 			);
 			path = SnippetConverterUITests;
 			sourceTree = "<group>";
@@ -287,6 +287,7 @@
 				B0539BB92B33205100A5243B /* View+errorAlert.swift in Sources */,
 				B0539BB62B33125800A5243B /* ViewModel.swift in Sources */,
 				B02ABC572B320DED0059C1B5 /* SnippetConverterApp.swift in Sources */,
+				B01DDA932E4E4C2100261FA6 /* DropZoneView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +304,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B02ABC732B320DEF0059C1B5 /* SnippetConverterUITests.swift in Sources */,
-				B02ABC752B320DEF0059C1B5 /* SnippetConverterUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,7 +451,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SnippetConverter/Preview Content\"";
-				DEVELOPMENT_TEAM = 7DJ7TXE967;
+				DEVELOPMENT_TEAM = TY9KXXP8XW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -478,7 +478,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SnippetConverter/Preview Content\"";
-				DEVELOPMENT_TEAM = 7DJ7TXE967;
+				DEVELOPMENT_TEAM = TY9KXXP8XW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -502,7 +502,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7DJ7TXE967;
+				DEVELOPMENT_TEAM = TY9KXXP8XW;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
@@ -521,7 +521,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7DJ7TXE967;
+				DEVELOPMENT_TEAM = TY9KXXP8XW;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
@@ -539,7 +539,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7DJ7TXE967;
+				DEVELOPMENT_TEAM = TY9KXXP8XW;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bkunat.SnippetConverterUITests;
@@ -556,7 +556,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7DJ7TXE967;
+				DEVELOPMENT_TEAM = TY9KXXP8XW;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bkunat.SnippetConverterUITests;

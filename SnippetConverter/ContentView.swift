@@ -8,37 +8,41 @@ struct ContentView: View {
     @StateObject private var viewModel = ViewModel()
 
     var body: some View {
-        VStack {
-            Form {
-                Section(header: Text("Alfred Snippets Exportr")) {
-                    HStack {
-                        Button("Browse Files", systemImage: "folder") {
-                            viewModel.openFilePicker()
-                        }
-                        Spacer()
-                        Text(viewModel.selectFileTitle)
+        VStack(spacing: 16) {
+            // Drop Zone
+            DropZoneView(viewModel: viewModel)
+            
+            // Settings
+            VStack(alignment: .leading, spacing: 16) {
+                Text("Output Settings")
+                    .font(.headline)
+                
+                VStack(spacing: 12) {
+                    LabeledContent("Destination:") {
+                        TextField("~/Downloads", text: $outputDestination)
+                            .textFieldStyle(.roundedBorder)
+                    }
+                    
+                    LabeledContent("Filename:") {
+                        TextField("output.plist", text: $outputFileName)
+                            .textFieldStyle(.roundedBorder)
                     }
                 }
-
-                Section(header: Text("Output Settings")) {
-                    TextField("Output Destination", text: $outputDestination)
-                    TextField("Output File Name", text: $outputFileName)
-                }
             }
-            .formStyle(.grouped)
-            Button(action: {
+            
+            Button("Convert Snippets", systemImage: "arrow.right.circle.fill") {
                 viewModel.convertFile(
                     snippetExportPath: viewModel.selectedPath!,
                     outputDestination: outputDestination,
                     outputFileName: outputFileName
                 )
-            }) {
-                Text("Convert")
             }
+            .buttonStyle(.borderedProminent)
+            .tint(.accentColor)
             .disabled(viewModel.selectedPath == nil)
-            .padding()
         }
-        .navigationTitle("Snippet Converter")
+        .padding()
+        .background(Color(NSColor.controlBackgroundColor))
         .errorAlert(error: $viewModel.error)
     }
 }
