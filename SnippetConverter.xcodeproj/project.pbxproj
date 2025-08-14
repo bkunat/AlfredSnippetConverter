@@ -7,16 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B01DDA932E4E4C2100261FA6 /* DropZoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01DDA922E4E4C2100261FA6 /* DropZoneView.swift */; };
-		B02ABC572B320DED0059C1B5 /* SnippetConverterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02ABC562B320DED0059C1B5 /* SnippetConverterApp.swift */; };
-		B02ABC592B320DED0059C1B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02ABC582B320DED0059C1B5 /* ContentView.swift */; };
-		B02ABC5B2B320DEE0059C1B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02ABC5A2B320DEE0059C1B5 /* Assets.xcassets */; };
-		B02ABC5E2B320DEE0059C1B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02ABC5D2B320DEE0059C1B5 /* Preview Assets.xcassets */; };
-		B02ABC692B320DEF0059C1B5 /* SnippetConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02ABC682B320DEF0059C1B5 /* SnippetConverterTests.swift */; };
-		B02ABC732B320DEF0059C1B5 /* SnippetConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02ABC722B320DEF0059C1B5 /* SnippetConverterUITests.swift */; };
 		B0539BB42B32172200A5243B /* SnippetConverterCore in Frameworks */ = {isa = PBXBuildFile; productRef = B0539BB32B32172200A5243B /* SnippetConverterCore */; };
-		B0539BB62B33125800A5243B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0539BB52B33125800A5243B /* ViewModel.swift */; };
-		B0539BB92B33205100A5243B /* View+errorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0539BB82B33205100A5243B /* View+errorAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,21 +28,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B01DDA922E4E4C2100261FA6 /* DropZoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropZoneView.swift; sourceTree = "<group>"; };
+		B006007B2E4E5108008299F8 /* UnitTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = UnitTests.xctestplan; path = SnippetConverterTests/TestPlans/UnitTests.xctestplan; sourceTree = "<group>"; };
 		B02ABC532B320DED0059C1B5 /* SnippetConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnippetConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B02ABC562B320DED0059C1B5 /* SnippetConverterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetConverterApp.swift; sourceTree = "<group>"; };
-		B02ABC582B320DED0059C1B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		B02ABC5A2B320DEE0059C1B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B02ABC5D2B320DEE0059C1B5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B02ABC5F2B320DEE0059C1B5 /* SnippetConverter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SnippetConverter.entitlements; sourceTree = "<group>"; };
 		B02ABC642B320DEF0059C1B5 /* SnippetConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnippetConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B02ABC682B320DEF0059C1B5 /* SnippetConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetConverterTests.swift; sourceTree = "<group>"; };
 		B02ABC6E2B320DEF0059C1B5 /* SnippetConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnippetConverterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B02ABC722B320DEF0059C1B5 /* SnippetConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetConverterUITests.swift; sourceTree = "<group>"; };
 		B0539BB12B320FC100A5243B /* Packages */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Packages; sourceTree = "<group>"; };
-		B0539BB52B33125800A5243B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		B0539BB82B33205100A5243B /* View+errorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+errorAlert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		B006006C2E4E509C008299F8 /* SnippetConverter */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SnippetConverter;
+			sourceTree = "<group>";
+		};
+		B00600752E4E50A1008299F8 /* SnippetConverterTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SnippetConverterTests;
+			sourceTree = "<group>";
+		};
+		B00600782E4E50A4008299F8 /* SnippetConverterUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SnippetConverterUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B02ABC502B320DED0059C1B5 /* Frameworks */ = {
@@ -76,10 +76,11 @@
 		B02ABC4A2B320DED0059C1B5 = {
 			isa = PBXGroup;
 			children = (
+				B006007B2E4E5108008299F8 /* UnitTests.xctestplan */,
 				B0539BB12B320FC100A5243B /* Packages */,
-				B02ABC552B320DED0059C1B5 /* SnippetConverter */,
-				B02ABC672B320DEF0059C1B5 /* SnippetConverterTests */,
-				B02ABC712B320DEF0059C1B5 /* SnippetConverterUITests */,
+				B006006C2E4E509C008299F8 /* SnippetConverter */,
+				B00600752E4E50A1008299F8 /* SnippetConverterTests */,
+				B00600782E4E50A4008299F8 /* SnippetConverterUITests */,
 				B02ABC542B320DED0059C1B5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,53 +95,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B02ABC552B320DED0059C1B5 /* SnippetConverter */ = {
-			isa = PBXGroup;
-			children = (
-				B0539BB72B33204200A5243B /* Utils */,
-				B02ABC562B320DED0059C1B5 /* SnippetConverterApp.swift */,
-				B02ABC582B320DED0059C1B5 /* ContentView.swift */,
-				B01DDA922E4E4C2100261FA6 /* DropZoneView.swift */,
-				B0539BB52B33125800A5243B /* ViewModel.swift */,
-				B02ABC5A2B320DEE0059C1B5 /* Assets.xcassets */,
-				B02ABC5F2B320DEE0059C1B5 /* SnippetConverter.entitlements */,
-				B02ABC5C2B320DEE0059C1B5 /* Preview Content */,
-			);
-			path = SnippetConverter;
-			sourceTree = "<group>";
-		};
-		B02ABC5C2B320DEE0059C1B5 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				B02ABC5D2B320DEE0059C1B5 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		B02ABC672B320DEF0059C1B5 /* SnippetConverterTests */ = {
-			isa = PBXGroup;
-			children = (
-				B02ABC682B320DEF0059C1B5 /* SnippetConverterTests.swift */,
-			);
-			path = SnippetConverterTests;
-			sourceTree = "<group>";
-		};
-		B02ABC712B320DEF0059C1B5 /* SnippetConverterUITests */ = {
-			isa = PBXGroup;
-			children = (
-				B02ABC722B320DEF0059C1B5 /* SnippetConverterUITests.swift */,
-			);
-			path = SnippetConverterUITests;
-			sourceTree = "<group>";
-		};
-		B0539BB72B33204200A5243B /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				B0539BB82B33205100A5243B /* View+errorAlert.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,6 +107,9 @@
 				B02ABC512B320DED0059C1B5 /* Resources */,
 			);
 			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				B006006C2E4E509C008299F8 /* SnippetConverter */,
 			);
 			name = SnippetConverter;
 			packageProductDependencies = (
@@ -175,6 +132,9 @@
 			dependencies = (
 				B02ABC662B320DEF0059C1B5 /* PBXTargetDependency */,
 			);
+			fileSystemSynchronizedGroups = (
+				B00600752E4E50A1008299F8 /* SnippetConverterTests */,
+			);
 			name = SnippetConverterTests;
 			productName = SnippetConverterTests;
 			productReference = B02ABC642B320DEF0059C1B5 /* SnippetConverterTests.xctest */;
@@ -192,6 +152,9 @@
 			);
 			dependencies = (
 				B02ABC702B320DEF0059C1B5 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B00600782E4E50A4008299F8 /* SnippetConverterUITests */,
 			);
 			name = SnippetConverterUITests;
 			productName = SnippetConverterUITests;
@@ -248,8 +211,6 @@
 		B02ABC512B320DED0059C1B5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
-				B02ABC5E2B320DEE0059C1B5 /* Preview Assets.xcassets in Resources */,
-				B02ABC5B2B320DEE0059C1B5 /* Assets.xcassets in Resources */,
 			);
 		};
 		B02ABC622B320DEF0059C1B5 /* Resources */ = {
@@ -268,23 +229,16 @@
 		B02ABC4F2B320DED0059C1B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			files = (
-				B02ABC592B320DED0059C1B5 /* ContentView.swift in Sources */,
-				B0539BB92B33205100A5243B /* View+errorAlert.swift in Sources */,
-				B0539BB62B33125800A5243B /* ViewModel.swift in Sources */,
-				B02ABC572B320DED0059C1B5 /* SnippetConverterApp.swift in Sources */,
-				B01DDA932E4E4C2100261FA6 /* DropZoneView.swift in Sources */,
 			);
 		};
 		B02ABC602B320DEF0059C1B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			files = (
-				B02ABC692B320DEF0059C1B5 /* SnippetConverterTests.swift in Sources */,
 			);
 		};
 		B02ABC6A2B320DEF0059C1B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			files = (
-				B02ABC732B320DEF0059C1B5 /* SnippetConverterUITests.swift in Sources */,
 			);
 		};
 /* End PBXSourcesBuildPhase section */
@@ -478,7 +432,6 @@
 		B02ABC7C2B320DEF0059C1B5 /* Debug configuration for PBXNativeTarget "SnippetConverterTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -497,7 +450,6 @@
 		B02ABC7D2B320DEF0059C1B5 /* Release configuration for PBXNativeTarget "SnippetConverterTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -516,7 +468,6 @@
 		B02ABC7F2B320DEF0059C1B5 /* Debug configuration for PBXNativeTarget "SnippetConverterUITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TY9KXXP8XW;
@@ -533,7 +484,6 @@
 		B02ABC802B320DEF0059C1B5 /* Release configuration for PBXNativeTarget "SnippetConverterUITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TY9KXXP8XW;
