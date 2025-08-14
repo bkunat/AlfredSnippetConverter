@@ -1,0 +1,5 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project SnippetConverter.xcodeproj -target SnippetConverterTests -destination platform=macOS build test
+
+2025-08-14 19:34:12.075 xcodebuild[75798:3833305] Writing error result bundle to /var/folders/xw/c8tbrqgs4yx7dz7240mhyr31qjj39g/T/ResultBundle_2025-14-08_19-34-0012.xcresult
+xcodebuild: error: 'SnippetConverter.xcodeproj' does not exist.

@@ -21,11 +21,14 @@ struct DropZoneView: View {
                         .foregroundStyle(isTargeted ? Color.accentColor : Color.secondary)
                     
                     VStack(spacing: 4) {
-                        Text("Drop Alfred Snippet Folder Here")
+                        Text("Drop Alfred Snippets Here")
                             .font(.headline)
                             .foregroundStyle(isTargeted ? Color.accentColor : Color.primary)
-                        Text("Or click to browse")
+                        Text("Folder or .alfredsnippets file")
                             .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                        Text("Or click to browse")
+                            .font(.caption)
                             .foregroundStyle(.secondary)
                     }
                 }
@@ -56,7 +59,7 @@ struct DropZoneView: View {
                         .font(.title3)
                     
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("Selected Folder:")
+                        Text("Selected:")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                         Text(viewModel.selectedPath!)
