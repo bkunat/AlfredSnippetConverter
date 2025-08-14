@@ -59,6 +59,7 @@ final class ViewModel: ObservableObject {
         snippetConverter = DefaultSnippetConverter(snippetExportPath: snippetExportPath, outputDestination: outputDestination, outputFileName: finalFileName)
         do {
             try snippetConverter?.run()
+            openInFinder(destination: outputDestination, fileName: finalFileName)
         } catch {
             self.error = error
         }
@@ -68,9 +69,18 @@ final class ViewModel: ObservableObject {
         snippetConverter = DefaultSnippetConverter(snippetExportPath: snippetExportPath, outputDestination: outputDestination, outputFileName: outputFileName)
         do {
             try snippetConverter?.run()
+            openInFinder(destination: outputDestination, fileName: outputFileName)
         } catch {
             self.error = error
         }
+    }
+    
+    private func openInFinder(destination: String, fileName: String) {
+        let expandedDestination = NSString(string: destination).expandingTildeInPath
+        let filePath = "\(expandedDestination)/\(fileName)"
+        let fileURL = URL(fileURLWithPath: filePath)
+        
+        NSWorkspace.shared.selectFile(filePath, inFileViewerRootedAtPath: expandedDestination)
     }
     
     func validateDroppedPath(_ path: String) -> Bool {
