@@ -3,7 +3,8 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var outputDestination = "~/Downloads"
-    @State private var outputFileName = "snippet-converter-output.plist"
+    @State private var outputFileName = "snippet-converter-output"
+    @State private var pendingConversion: (snippetPath: String, destination: String, fileName: String)?
 
     @StateObject private var viewModel = ViewModel()
 
@@ -24,17 +25,25 @@ struct ContentView: View {
                     }
                     
                     LabeledContent("Filename:") {
-                        TextField("output.plist", text: $outputFileName)
-                            .textFieldStyle(.roundedBorder)
+                        HStack(spacing: 4) {
+                            TextField("snippet-converter-output", text: $outputFileName)
+                                .textFieldStyle(.roundedBorder)
+                            Text(".plist")
+                                .font(.body)
+                                .foregroundStyle(.secondary)
+                        }
                     }
                 }
             }
             
             Button("Convert Snippets", systemImage: "arrow.right.circle.fill") {
+                let finalFileName = outputFileName + ".plist"
+                pendingConversion = (viewModel.selectedPath!, outputDestination, finalFileName)
+                
                 viewModel.convertFile(
                     snippetExportPath: viewModel.selectedPath!,
                     outputDestination: outputDestination,
-                    outputFileName: outputFileName
+                    outputFileName: finalFileName
                 )
             }
             .buttonStyle(.borderedProminent)
@@ -43,7 +52,16 @@ struct ContentView: View {
         }
         .padding()
         .background(Color(NSColor.controlBackgroundColor))
-        .errorAlert(error: $viewModel.error)
+        .fileExistsAlert(error: $viewModel.error) {
+            if let conversion = pendingConversion {
+                viewModel.convertFileWithForceOverwrite(
+                    snippetExportPath: conversion.snippetPath,
+                    outputDestination: conversion.destination,
+                    outputFileName: conversion.fileName,
+                    forceOverwrite: true
+                )
+            }
+        }
     }
 }
 

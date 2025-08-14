@@ -69,6 +69,12 @@ struct DropZoneView: View {
                     
                     Spacer()
                     
+                    Button("Clear", systemImage: "xmark.circle") {
+                        viewModel.clearSelection()
+                    }
+                    .buttonStyle(.borderless)
+                    .foregroundStyle(.secondary)
+                    
                     Button("Change", systemImage: "folder") {
                         viewModel.openFilePicker()
                     }

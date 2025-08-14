@@ -30,6 +30,39 @@ final class ViewModel: ObservableObject {
             selectedPath = openPanel.url?.path // Get the selected path
         }
     }
+    
+    func clearSelection() {
+        selectedPath = nil
+        error = nil
+    }
+    
+    func generateUniqueFileName(baseName: String, destination: String) -> String {
+        let fileManager = FileManager.default
+        let expandedDestination = NSString(string: destination).expandingTildeInPath
+        
+        var counter = 2
+        var uniqueName = baseName
+        
+        while fileManager.fileExists(atPath: "\(expandedDestination)/\(uniqueName)") {
+            let nameWithoutExtension = NSString(string: baseName).deletingPathExtension
+            let fileExtension = NSString(string: baseName).pathExtension
+            uniqueName = "\(nameWithoutExtension) \(counter).\(fileExtension)"
+            counter += 1
+        }
+        
+        return uniqueName
+    }
+    
+    func convertFileWithForceOverwrite(snippetExportPath: String, outputDestination: String, outputFileName: String, forceOverwrite: Bool = false) {
+        let finalFileName = forceOverwrite ? generateUniqueFileName(baseName: outputFileName, destination: outputDestination) : outputFileName
+        
+        snippetConverter = DefaultSnippetConverter(snippetExportPath: snippetExportPath, outputDestination: outputDestination, outputFileName: finalFileName)
+        do {
+            try snippetConverter?.run()
+        } catch {
+            self.error = error
+        }
+    }
 
     func convertFile(snippetExportPath: String, outputDestination: String, outputFileName: String) {
         snippetConverter = DefaultSnippetConverter(snippetExportPath: snippetExportPath, outputDestination: outputDestination, outputFileName: outputFileName)
