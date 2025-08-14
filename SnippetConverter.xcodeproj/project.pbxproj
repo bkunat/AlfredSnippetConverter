@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 90;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -56,25 +56,19 @@
 /* Begin PBXFrameworksBuildPhase section */
 		B02ABC502B320DED0059C1B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				B0539BB42B32172200A5243B /* SnippetConverterCore in Frameworks */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B02ABC612B320DEF0059C1B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B02ABC6B2B320DEF0059C1B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -160,8 +154,6 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			name = SnippetConverter;
 			packageProductDependencies = (
 				B0539BB32B32172200A5243B /* SnippetConverterCore */,
@@ -230,7 +222,6 @@
 				};
 			};
 			buildConfigurationList = B02ABC4E2B320DED0059C1B5 /* Build configuration list for PBXProject "SnippetConverter" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -241,6 +232,7 @@
 			packageReferences = (
 				B0539BB22B32172200A5243B /* XCLocalSwiftPackageReference "Packages" */,
 			);
+			preferredProjectObjectVersion = 90;
 			productRefGroup = B02ABC542B320DED0059C1B5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -255,33 +247,26 @@
 /* Begin PBXResourcesBuildPhase section */
 		B02ABC512B320DED0059C1B5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				B02ABC5E2B320DEE0059C1B5 /* Preview Assets.xcassets in Resources */,
 				B02ABC5B2B320DEE0059C1B5 /* Assets.xcassets in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B02ABC622B320DEF0059C1B5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B02ABC6C2B320DEF0059C1B5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B02ABC4F2B320DED0059C1B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				B02ABC592B320DED0059C1B5 /* ContentView.swift in Sources */,
 				B0539BB92B33205100A5243B /* View+errorAlert.swift in Sources */,
@@ -289,23 +274,18 @@
 				B02ABC572B320DED0059C1B5 /* SnippetConverterApp.swift in Sources */,
 				B01DDA932E4E4C2100261FA6 /* DropZoneView.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B02ABC602B320DEF0059C1B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				B02ABC692B320DEF0059C1B5 /* SnippetConverterTests.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B02ABC6A2B320DEF0059C1B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				B02ABC732B320DEF0059C1B5 /* SnippetConverterUITests.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
@@ -323,7 +303,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		B02ABC762B320DEF0059C1B5 /* Debug */ = {
+		B02ABC762B320DEF0059C1B5 /* Debug configuration for PBXProject "SnippetConverter" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -386,7 +366,7 @@
 			};
 			name = Debug;
 		};
-		B02ABC772B320DEF0059C1B5 /* Release */ = {
+		B02ABC772B320DEF0059C1B5 /* Release configuration for PBXProject "SnippetConverter" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -441,7 +421,7 @@
 			};
 			name = Release;
 		};
-		B02ABC792B320DEF0059C1B5 /* Debug */ = {
+		B02ABC792B320DEF0059C1B5 /* Debug configuration for PBXNativeTarget "SnippetConverter" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -468,7 +448,7 @@
 			};
 			name = Debug;
 		};
-		B02ABC7A2B320DEF0059C1B5 /* Release */ = {
+		B02ABC7A2B320DEF0059C1B5 /* Release configuration for PBXNativeTarget "SnippetConverter" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -495,7 +475,7 @@
 			};
 			name = Release;
 		};
-		B02ABC7C2B320DEF0059C1B5 /* Debug */ = {
+		B02ABC7C2B320DEF0059C1B5 /* Debug configuration for PBXNativeTarget "SnippetConverterTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -514,7 +494,7 @@
 			};
 			name = Debug;
 		};
-		B02ABC7D2B320DEF0059C1B5 /* Release */ = {
+		B02ABC7D2B320DEF0059C1B5 /* Release configuration for PBXNativeTarget "SnippetConverterTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -533,7 +513,7 @@
 			};
 			name = Release;
 		};
-		B02ABC7F2B320DEF0059C1B5 /* Debug */ = {
+		B02ABC7F2B320DEF0059C1B5 /* Debug configuration for PBXNativeTarget "SnippetConverterUITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -550,7 +530,7 @@
 			};
 			name = Debug;
 		};
-		B02ABC802B320DEF0059C1B5 /* Release */ = {
+		B02ABC802B320DEF0059C1B5 /* Release configuration for PBXNativeTarget "SnippetConverterUITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -573,37 +553,33 @@
 		B02ABC4E2B320DED0059C1B5 /* Build configuration list for PBXProject "SnippetConverter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B02ABC762B320DEF0059C1B5 /* Debug */,
-				B02ABC772B320DEF0059C1B5 /* Release */,
+				B02ABC762B320DEF0059C1B5 /* Debug configuration for PBXProject "SnippetConverter" */,
+				B02ABC772B320DEF0059C1B5 /* Release configuration for PBXProject "SnippetConverter" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		B02ABC782B320DEF0059C1B5 /* Build configuration list for PBXNativeTarget "SnippetConverter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B02ABC792B320DEF0059C1B5 /* Debug */,
-				B02ABC7A2B320DEF0059C1B5 /* Release */,
+				B02ABC792B320DEF0059C1B5 /* Debug configuration for PBXNativeTarget "SnippetConverter" */,
+				B02ABC7A2B320DEF0059C1B5 /* Release configuration for PBXNativeTarget "SnippetConverter" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		B02ABC7B2B320DEF0059C1B5 /* Build configuration list for PBXNativeTarget "SnippetConverterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B02ABC7C2B320DEF0059C1B5 /* Debug */,
-				B02ABC7D2B320DEF0059C1B5 /* Release */,
+				B02ABC7C2B320DEF0059C1B5 /* Debug configuration for PBXNativeTarget "SnippetConverterTests" */,
+				B02ABC7D2B320DEF0059C1B5 /* Release configuration for PBXNativeTarget "SnippetConverterTests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		B02ABC7E2B320DEF0059C1B5 /* Build configuration list for PBXNativeTarget "SnippetConverterUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B02ABC7F2B320DEF0059C1B5 /* Debug */,
-				B02ABC802B320DEF0059C1B5 /* Release */,
+				B02ABC7F2B320DEF0059C1B5 /* Debug configuration for PBXNativeTarget "SnippetConverterUITests" */,
+				B02ABC802B320DEF0059C1B5 /* Release configuration for PBXNativeTarget "SnippetConverterUITests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
