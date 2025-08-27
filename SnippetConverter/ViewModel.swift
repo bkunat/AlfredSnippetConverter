@@ -19,7 +19,7 @@ final class ViewModel: ObservableObject {
         self.snippetConverter = snippetConverter
     }
 
-    func openFilePicker() {
+    @MainActor func openFilePicker() {
         let openPanel = NSOpenPanel()
         openPanel.canChooseFiles = true // Users can choose files
         openPanel.canChooseDirectories = true // Users can choose directories
@@ -53,7 +53,7 @@ final class ViewModel: ObservableObject {
         return uniqueName
     }
     
-    func convertFileWithForceOverwrite(snippetExportPath: String, outputDestination: String, outputFileName: String, forceOverwrite: Bool = false) {
+    @MainActor func convertFileWithForceOverwrite(snippetExportPath: String, outputDestination: String, outputFileName: String, forceOverwrite: Bool = false) {
         let finalFileName = forceOverwrite ? generateUniqueFileName(baseName: outputFileName, destination: outputDestination) : outputFileName
         
         snippetConverter = DefaultSnippetConverter(snippetExportPath: snippetExportPath, outputDestination: outputDestination, outputFileName: finalFileName)
@@ -65,7 +65,7 @@ final class ViewModel: ObservableObject {
         }
     }
 
-    func convertFile(snippetExportPath: String, outputDestination: String, outputFileName: String) {
+    @MainActor func convertFile(snippetExportPath: String, outputDestination: String, outputFileName: String) {
         snippetConverter = DefaultSnippetConverter(snippetExportPath: snippetExportPath, outputDestination: outputDestination, outputFileName: outputFileName)
         do {
             try snippetConverter?.run()
@@ -75,10 +75,10 @@ final class ViewModel: ObservableObject {
         }
     }
     
-    private func openInFinder(destination: String, fileName: String) {
+    @MainActor private func openInFinder(destination: String, fileName: String) {
         let expandedDestination = NSString(string: destination).expandingTildeInPath
         let filePath = "\(expandedDestination)/\(fileName)"
-        let fileURL = URL(fileURLWithPath: filePath)
+        _ = URL(fileURLWithPath: filePath)
         
         NSWorkspace.shared.selectFile(filePath, inFileViewerRootedAtPath: expandedDestination)
     }
