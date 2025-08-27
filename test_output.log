@@ -1,0 +1,16 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project SnippetConverter.xcodeproj -scheme SnippetConverterTests test
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  swift-argument-parser: https://github.com/apple/swift-argument-parser @ 1.3.0
+  Main: /Users/bkunat/Developer/alfredsnippetconverter/Packages
+
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:macOS, arch:arm64, id:00006040-0002186E3E92801C, name:My Mac }
+{ platform:macOS, arch:x86_64, id:00006040-0002186E3E92801C, name:My Mac }
+{ platform:macOS, name:Any Mac }
+2025-08-27 19:18:38.691 xcodebuild[89950:1899138] Writing error result bundle to /var/folders/xw/c8tbrqgs4yx7dz7240mhyr31qjj39g/T/ResultBundle_2025-27-08_19-18-0038.xcresult
+xcodebuild: error: Failed to build project SnippetConverter with scheme SnippetConverterTests.: Tests cannot be run because the test plan “UnitTests” could not be read.

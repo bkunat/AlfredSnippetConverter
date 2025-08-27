@@ -2,18 +2,16 @@ import Foundation
 import Compression
 
 struct FileHandler {
-    static let fileManager = FileManager.default
-
     static func fileExists(at url: URL) -> Bool {
-        return fileManager.fileExists(atPath: url.path)
+        return FileManager.default.fileExists(atPath: url.path)
     }
 
     static func createFile(at url: URL) {
-        fileManager.createFile(atPath: url.path, contents: nil)
+        FileManager.default.createFile(atPath: url.path, contents: nil)
     }
 
     static func contentsOfDirectory(atPath path: String) throws -> [String] {
-        return try fileManager.contentsOfDirectory(atPath: path)
+        return try FileManager.default.contentsOfDirectory(atPath: path)
     }
     
     static func isZipFile(at path: String) -> Bool {
@@ -45,16 +43,16 @@ struct FileHandler {
         let sourceURL = URL(fileURLWithPath: sourcePath)
         let destinationURL = URL(fileURLWithPath: destinationPath)
         
-        try fileManager.unzipItem(at: sourceURL, to: destinationURL)
+        try FileManager.default.unzipItem(at: sourceURL, to: destinationURL)
     }
     
     static func createTemporaryDirectory() throws -> URL {
-        let tempDir = fileManager.temporaryDirectory
+        let tempDir = FileManager.default.temporaryDirectory
         let uniqueID = UUID().uuidString
         let tempURL = tempDir.appendingPathComponent("SnippetConverter-\(uniqueID)")
         
         do {
-            try fileManager.createDirectory(at: tempURL, withIntermediateDirectories: true, attributes: nil)
+            try FileManager.default.createDirectory(at: tempURL, withIntermediateDirectories: true, attributes: nil)
             return tempURL
         } catch {
             throw SnippetConverterError.temporaryDirectoryCreationFailed
@@ -62,7 +60,7 @@ struct FileHandler {
     }
     
     static func removeDirectory(at url: URL) throws {
-        try fileManager.removeItem(at: url)
+        try FileManager.default.removeItem(at: url)
     }
 }
 
