@@ -1,6 +1,6 @@
 import Foundation
 
-enum SnippetConverterError: Error {
+enum SnippetConverterError: Error, Equatable {
     case fileAlreadyExists(filePath: String)
     case invalidOutputFileType
     case invalidData
@@ -12,6 +12,35 @@ enum SnippetConverterError: Error {
     case directoryNotFound(path: String)
     case zipFileNotFound(path: String)
     case invalidArchiveContent(reason: String)
+    
+    static func == (lhs: SnippetConverterError, rhs: SnippetConverterError) -> Bool {
+        switch (lhs, rhs) {
+        case (.fileAlreadyExists(let lhsPath), .fileAlreadyExists(let rhsPath)):
+            return lhsPath == rhsPath
+        case (.invalidOutputFileType, .invalidOutputFileType):
+            return true
+        case (.invalidData, .invalidData):
+            return true
+        case (.invalidZipFile(let lhsPath), .invalidZipFile(let rhsPath)):
+            return lhsPath == rhsPath
+        case (.zipExtractionFailed(let lhsError), .zipExtractionFailed(let rhsError)):
+            return lhsError.localizedDescription == rhsError.localizedDescription
+        case (.temporaryDirectoryCreationFailed, .temporaryDirectoryCreationFailed):
+            return true
+        case (.cleanupFailed(let lhsError), .cleanupFailed(let rhsError)):
+            return lhsError.localizedDescription == rhsError.localizedDescription
+        case (.unsupportedInputFormat, .unsupportedInputFormat):
+            return true
+        case (.directoryNotFound(let lhsPath), .directoryNotFound(let rhsPath)):
+            return lhsPath == rhsPath
+        case (.zipFileNotFound(let lhsPath), .zipFileNotFound(let rhsPath)):
+            return lhsPath == rhsPath
+        case (.invalidArchiveContent(let lhsReason), .invalidArchiveContent(let rhsReason)):
+            return lhsReason == rhsReason
+        default:
+            return false
+        }
+    }
 }
 
 extension SnippetConverterError: LocalizedError {

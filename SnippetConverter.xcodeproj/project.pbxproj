@@ -28,11 +28,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B006007B2E4E5108008299F8 /* UnitTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = UnitTests.xctestplan; path = SnippetConverterTests/TestPlans/UnitTests.xctestplan; sourceTree = "<group>"; };
 		B02ABC532B320DED0059C1B5 /* SnippetConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnippetConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02ABC642B320DEF0059C1B5 /* SnippetConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnippetConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02ABC6E2B320DEF0059C1B5 /* SnippetConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnippetConverterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0539BB12B320FC100A5243B /* Packages */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Packages; sourceTree = "<group>"; };
+		B0EC1A7E2E4E679B0054F371 /* UnitTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UnitTests.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -76,7 +76,7 @@
 		B02ABC4A2B320DED0059C1B5 = {
 			isa = PBXGroup;
 			children = (
-				B006007B2E4E5108008299F8 /* UnitTests.xctestplan */,
+				B0EC1A7E2E4E679B0054F371 /* UnitTests.xctestplan */,
 				B0539BB12B320FC100A5243B /* Packages */,
 				B006006C2E4E509C008299F8 /* SnippetConverter */,
 				B00600752E4E50A1008299F8 /* SnippetConverterTests */,
