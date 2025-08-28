@@ -51,6 +51,8 @@ Run the following command in the terminal:
 
 ### Converting with the macOS App
 
+![header](https://github.com/user-attachments/assets/da493210-5e47-4d09-aca6-d2611a79e513)
+
 1. Open the macOS Snippet Converter app.
 2. Select the directory containing the exported Snippets Collection from Alfred.
 3. Click "Convert".
