@@ -274,9 +274,7 @@ final class FileHandlerTests: XCTestCase {
         let destination = tempDirectory.appendingPathComponent("destination")
         try! FileManager.default.createDirectory(at: destination, withIntermediateDirectories: true, attributes: nil)
         
-        XCTAssertThrowsError(try FileHandler.extractZip(from: nonexistentSource.path, to: destination.path)) { error in
-            XCTAssertTrue(error is NSError)
-        }
+        XCTAssertThrowsError(try FileHandler.extractZip(from: nonexistentSource.path, to: destination.path)) { _ in }
     }
     
     func test_extractZip_throwsError_forInvalidZipFile() {
@@ -287,9 +285,7 @@ final class FileHandlerTests: XCTestCase {
         try! FileManager.default.createDirectory(at: destination, withIntermediateDirectories: true, attributes: nil)
         
         XCTAssertThrowsError(try FileHandler.extractZip(from: invalidZip.path, to: destination.path)) { error in
-            XCTAssertTrue(error is NSError)
-            let nsError = error as! NSError
-            XCTAssertEqual(nsError.domain, "UnzipError")
+            XCTAssertEqual((error as NSError).domain, "UnzipError")
         }
     }
     
@@ -301,9 +297,7 @@ final class FileHandlerTests: XCTestCase {
         
         let nonexistentDestination = "/this/path/should/not/exist"
         
-        XCTAssertThrowsError(try FileHandler.extractZip(from: testZip.path, to: nonexistentDestination)) { error in
-            XCTAssertTrue(error is NSError)
-        }
+        XCTAssertThrowsError(try FileHandler.extractZip(from: testZip.path, to: nonexistentDestination)) { _ in }
     }
     
     // MARK: - Integration Tests for createTemporaryDirectory and removeDirectory
