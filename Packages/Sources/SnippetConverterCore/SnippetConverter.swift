@@ -5,7 +5,8 @@ public protocol SnippetConverter {
 }
 
 public struct DefaultSnippetConverter: SnippetConverter {
-    private let snippetExportPath: String
+    private let snippetExportPath: String?
+    private let inputHandler: SnippetInputHandler?
     private let outputDestination: String
     private let outputFileName: String
 
@@ -16,6 +17,14 @@ public struct DefaultSnippetConverter: SnippetConverter {
 
     public init(snippetExportPath: String, outputDestination: String, outputFileName: String) {
         self.snippetExportPath = snippetExportPath
+        self.inputHandler = nil
+        self.outputDestination = outputDestination
+        self.outputFileName = outputFileName
+    }
+    
+    public init(inputHandler: SnippetInputHandler, outputDestination: String, outputFileName: String) {
+        self.snippetExportPath = nil
+        self.inputHandler = inputHandler
         self.outputDestination = outputDestination
         self.outputFileName = outputFileName
     }
@@ -26,9 +35,34 @@ public struct DefaultSnippetConverter: SnippetConverter {
 
         FileHandler.createFile(at: outputURL)
 
-        let fileURLs = try fetchJSONFileURLs()
+        let handler = try createInputHandler()
+        let directoryURL = try handler.prepareInput()
+        
+        defer {
+            try? handler.cleanup()
+        }
+
+        let fileURLs = try fetchJSONFileURLs(from: directoryURL.path)
         let snippets = try fileURLs.map(decodeSnippet)
         try writeSnippets(snippets)
+    }
+    
+    private func createInputHandler() throws -> SnippetInputHandler {
+        if let handler = inputHandler {
+            return handler
+        } else if let path = snippetExportPath {
+            let inputType = determineInputType(path)
+            switch inputType {
+            case .directory:
+                return DirectoryInputHandler(directoryPath: path)
+            case .zipFile:
+                return ZipInputHandler(zipFilePath: path)
+            case .unsupported:
+                throw SnippetConverterError.unsupportedInputFormat
+            }
+        } else {
+            throw SnippetConverterError.unsupportedInputFormat
+        }
     }
 
     private func validateOutputFileName() throws {
@@ -43,11 +77,11 @@ public struct DefaultSnippetConverter: SnippetConverter {
         }
     }
 
-    private func fetchJSONFileURLs() throws -> [URL] {
-        let files = try FileManager.default.contentsOfDirectory(atPath: snippetExportPath)
+    private func fetchJSONFileURLs(from directoryPath: String) throws -> [URL] {
+        let files = try FileManager.default.contentsOfDirectory(atPath: directoryPath)
         return files
             .filter { $0.hasSuffix(".json") }
-            .map { URL(fileURLWithPath: snippetExportPath).appendingPathComponent($0) }
+            .map { URL(fileURLWithPath: directoryPath).appendingPathComponent($0) }
     }
 
     private func decodeSnippet(from fileURL: URL) throws -> Alfredsnippet {

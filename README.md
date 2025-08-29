@@ -8,9 +8,11 @@ Easily convert Alfred Text Snippets into macOS Text Replacements.
 
 ## Features
 
-- Simple conversion of Alfred snippets to macOS format.
-- Command Line Interface (CLI) for advanced users.
-- User-friendly macOS app for straightforward conversions.
+- Simple conversion of Alfred snippets to macOS format
+- Support for both exported snippet directories and `.alfredsnippets` zip files
+- Drag-and-drop support in the macOS app
+- Command Line Interface (CLI) for advanced users
+- User-friendly macOS app for straightforward conversions
 
 ## Requirements
 
@@ -37,9 +39,9 @@ You can either build the project from source using Xcode or download one of the 
 ### Exporting Snippets from Alfred
 
 1. [Export](https://www.alfredapp.com/help/features/snippets/#sharing) a Snippets Collection from Alfred.
-2. Extract the `.zip` archive using macOS Archive Utility app. 
+2. Use the exported `.alfredsnippets` file directly, or extract the archive to get a directory.
 
-> Alfred Text Snippets are exported as `.zip` archives.
+> Alfred Text Snippets are exported as `.alfredsnippets` zip archives. The converter supports both the zip files and extracted directories.
 
 ### Converting with the CLI
 
@@ -49,12 +51,16 @@ Run the following command in the terminal:
 ./snippet-converter-cli path-to-exported-snippets-collection-from-alfred
 ```
 
+The CLI accepts both directories (extracted from Alfred) and `.alfredsnippets` zip files directly.
+
 ### Converting with the macOS App
 
 ![header](https://github.com/user-attachments/assets/da493210-5e47-4d09-aca6-d2611a79e513)
 
 1. Open the macOS Snippet Converter app.
-2. Select the directory containing the exported Snippets Collection from Alfred.
+2. Either:
+   - **Drag and drop** your `.alfredsnippets` file or extracted directory into the app
+   - **Click to browse** and select your snippets file or directory
 3. Click "Convert".
 
 <p align="center">

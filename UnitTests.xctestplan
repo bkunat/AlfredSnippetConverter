@@ -1,0 +1,43 @@
+{
+  "configurations" : [
+    {
+      "id" : "ACD2EB16-9B25-49C4-BDBA-FF5548D4BCE3",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:SnippetConverter.xcodeproj",
+      "identifier" : "B02ABC522B320DED0059C1B5",
+      "name" : "SnippetConverter"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Packages",
+        "identifier" : "SnippetConverterCoreTests",
+        "name" : "SnippetConverterCoreTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:SnippetConverter.xcodeproj",
+        "identifier" : "B02ABC632B320DEF0059C1B5",
+        "name" : "SnippetConverterTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Packages",
+        "identifier" : "SnippetConverterCLITests",
+        "name" : "SnippetConverterCLITests"
+      }
+    }
+  ],
+  "version" : 1
+}

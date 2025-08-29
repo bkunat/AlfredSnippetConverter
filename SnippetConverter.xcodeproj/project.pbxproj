@@ -3,20 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 90;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B02ABC572B320DED0059C1B5 /* SnippetConverterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02ABC562B320DED0059C1B5 /* SnippetConverterApp.swift */; };
-		B02ABC592B320DED0059C1B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02ABC582B320DED0059C1B5 /* ContentView.swift */; };
-		B02ABC5B2B320DEE0059C1B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02ABC5A2B320DEE0059C1B5 /* Assets.xcassets */; };
-		B02ABC5E2B320DEE0059C1B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02ABC5D2B320DEE0059C1B5 /* Preview Assets.xcassets */; };
-		B02ABC692B320DEF0059C1B5 /* SnippetConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02ABC682B320DEF0059C1B5 /* SnippetConverterTests.swift */; };
-		B02ABC732B320DEF0059C1B5 /* SnippetConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02ABC722B320DEF0059C1B5 /* SnippetConverterUITests.swift */; };
-		B02ABC752B320DEF0059C1B5 /* SnippetConverterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02ABC742B320DEF0059C1B5 /* SnippetConverterUITestsLaunchTests.swift */; };
 		B0539BB42B32172200A5243B /* SnippetConverterCore in Frameworks */ = {isa = PBXBuildFile; productRef = B0539BB32B32172200A5243B /* SnippetConverterCore */; };
-		B0539BB62B33125800A5243B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0539BB52B33125800A5243B /* ViewModel.swift */; };
-		B0539BB92B33205100A5243B /* View+errorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0539BB82B33205100A5243B /* View+errorAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,43 +29,46 @@
 
 /* Begin PBXFileReference section */
 		B02ABC532B320DED0059C1B5 /* SnippetConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnippetConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B02ABC562B320DED0059C1B5 /* SnippetConverterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetConverterApp.swift; sourceTree = "<group>"; };
-		B02ABC582B320DED0059C1B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		B02ABC5A2B320DEE0059C1B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B02ABC5D2B320DEE0059C1B5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B02ABC5F2B320DEE0059C1B5 /* SnippetConverter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SnippetConverter.entitlements; sourceTree = "<group>"; };
 		B02ABC642B320DEF0059C1B5 /* SnippetConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnippetConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B02ABC682B320DEF0059C1B5 /* SnippetConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetConverterTests.swift; sourceTree = "<group>"; };
 		B02ABC6E2B320DEF0059C1B5 /* SnippetConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnippetConverterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B02ABC722B320DEF0059C1B5 /* SnippetConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetConverterUITests.swift; sourceTree = "<group>"; };
-		B02ABC742B320DEF0059C1B5 /* SnippetConverterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetConverterUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B0539BB12B320FC100A5243B /* Packages */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Packages; sourceTree = "<group>"; };
-		B0539BB52B33125800A5243B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		B0539BB82B33205100A5243B /* View+errorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+errorAlert.swift"; sourceTree = "<group>"; };
+		B0EC1A7E2E4E679B0054F371 /* UnitTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UnitTests.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		B006006C2E4E509C008299F8 /* SnippetConverter */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SnippetConverter;
+			sourceTree = "<group>";
+		};
+		B00600752E4E50A1008299F8 /* SnippetConverterTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SnippetConverterTests;
+			sourceTree = "<group>";
+		};
+		B00600782E4E50A4008299F8 /* SnippetConverterUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SnippetConverterUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B02ABC502B320DED0059C1B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				B0539BB42B32172200A5243B /* SnippetConverterCore in Frameworks */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B02ABC612B320DEF0059C1B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B02ABC6B2B320DEF0059C1B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -82,10 +76,11 @@
 		B02ABC4A2B320DED0059C1B5 = {
 			isa = PBXGroup;
 			children = (
+				B0EC1A7E2E4E679B0054F371 /* UnitTests.xctestplan */,
 				B0539BB12B320FC100A5243B /* Packages */,
-				B02ABC552B320DED0059C1B5 /* SnippetConverter */,
-				B02ABC672B320DEF0059C1B5 /* SnippetConverterTests */,
-				B02ABC712B320DEF0059C1B5 /* SnippetConverterUITests */,
+				B006006C2E4E509C008299F8 /* SnippetConverter */,
+				B00600752E4E50A1008299F8 /* SnippetConverterTests */,
+				B00600782E4E50A4008299F8 /* SnippetConverterUITests */,
 				B02ABC542B320DED0059C1B5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,53 +93,6 @@
 				B02ABC6E2B320DEF0059C1B5 /* SnippetConverterUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		B02ABC552B320DED0059C1B5 /* SnippetConverter */ = {
-			isa = PBXGroup;
-			children = (
-				B0539BB72B33204200A5243B /* Utils */,
-				B02ABC562B320DED0059C1B5 /* SnippetConverterApp.swift */,
-				B02ABC582B320DED0059C1B5 /* ContentView.swift */,
-				B0539BB52B33125800A5243B /* ViewModel.swift */,
-				B02ABC5A2B320DEE0059C1B5 /* Assets.xcassets */,
-				B02ABC5F2B320DEE0059C1B5 /* SnippetConverter.entitlements */,
-				B02ABC5C2B320DEE0059C1B5 /* Preview Content */,
-			);
-			path = SnippetConverter;
-			sourceTree = "<group>";
-		};
-		B02ABC5C2B320DEE0059C1B5 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				B02ABC5D2B320DEE0059C1B5 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		B02ABC672B320DEF0059C1B5 /* SnippetConverterTests */ = {
-			isa = PBXGroup;
-			children = (
-				B02ABC682B320DEF0059C1B5 /* SnippetConverterTests.swift */,
-			);
-			path = SnippetConverterTests;
-			sourceTree = "<group>";
-		};
-		B02ABC712B320DEF0059C1B5 /* SnippetConverterUITests */ = {
-			isa = PBXGroup;
-			children = (
-				B02ABC722B320DEF0059C1B5 /* SnippetConverterUITests.swift */,
-				B02ABC742B320DEF0059C1B5 /* SnippetConverterUITestsLaunchTests.swift */,
-			);
-			path = SnippetConverterUITests;
-			sourceTree = "<group>";
-		};
-		B0539BB72B33204200A5243B /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				B0539BB82B33205100A5243B /* View+errorAlert.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,7 +108,8 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
+			fileSystemSynchronizedGroups = (
+				B006006C2E4E509C008299F8 /* SnippetConverter */,
 			);
 			name = SnippetConverter;
 			packageProductDependencies = (
@@ -183,6 +132,9 @@
 			dependencies = (
 				B02ABC662B320DEF0059C1B5 /* PBXTargetDependency */,
 			);
+			fileSystemSynchronizedGroups = (
+				B00600752E4E50A1008299F8 /* SnippetConverterTests */,
+			);
 			name = SnippetConverterTests;
 			productName = SnippetConverterTests;
 			productReference = B02ABC642B320DEF0059C1B5 /* SnippetConverterTests.xctest */;
@@ -200,6 +152,9 @@
 			);
 			dependencies = (
 				B02ABC702B320DEF0059C1B5 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B00600782E4E50A4008299F8 /* SnippetConverterUITests */,
 			);
 			name = SnippetConverterUITests;
 			productName = SnippetConverterUITests;
@@ -230,7 +185,6 @@
 				};
 			};
 			buildConfigurationList = B02ABC4E2B320DED0059C1B5 /* Build configuration list for PBXProject "SnippetConverter" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -241,6 +195,7 @@
 			packageReferences = (
 				B0539BB22B32172200A5243B /* XCLocalSwiftPackageReference "Packages" */,
 			);
+			preferredProjectObjectVersion = 90;
 			productRefGroup = B02ABC542B320DED0059C1B5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -255,57 +210,36 @@
 /* Begin PBXResourcesBuildPhase section */
 		B02ABC512B320DED0059C1B5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
-				B02ABC5E2B320DEE0059C1B5 /* Preview Assets.xcassets in Resources */,
-				B02ABC5B2B320DEE0059C1B5 /* Assets.xcassets in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B02ABC622B320DEF0059C1B5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B02ABC6C2B320DEF0059C1B5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B02ABC4F2B320DED0059C1B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
-				B02ABC592B320DED0059C1B5 /* ContentView.swift in Sources */,
-				B0539BB92B33205100A5243B /* View+errorAlert.swift in Sources */,
-				B0539BB62B33125800A5243B /* ViewModel.swift in Sources */,
-				B02ABC572B320DED0059C1B5 /* SnippetConverterApp.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B02ABC602B320DEF0059C1B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
-				B02ABC692B320DEF0059C1B5 /* SnippetConverterTests.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B02ABC6A2B320DEF0059C1B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
-				B02ABC732B320DEF0059C1B5 /* SnippetConverterUITests.swift in Sources */,
-				B02ABC752B320DEF0059C1B5 /* SnippetConverterUITestsLaunchTests.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
@@ -323,7 +257,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		B02ABC762B320DEF0059C1B5 /* Debug */ = {
+		B02ABC762B320DEF0059C1B5 /* Debug configuration for PBXProject "SnippetConverter" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -386,7 +320,7 @@
 			};
 			name = Debug;
 		};
-		B02ABC772B320DEF0059C1B5 /* Release */ = {
+		B02ABC772B320DEF0059C1B5 /* Release configuration for PBXProject "SnippetConverter" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -441,7 +375,7 @@
 			};
 			name = Release;
 		};
-		B02ABC792B320DEF0059C1B5 /* Debug */ = {
+		B02ABC792B320DEF0059C1B5 /* Debug configuration for PBXNativeTarget "SnippetConverter" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -451,7 +385,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SnippetConverter/Preview Content\"";
-				DEVELOPMENT_TEAM = 7DJ7TXE967;
+				DEVELOPMENT_TEAM = TY9KXXP8XW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -464,11 +398,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bkunat.SnippetConverter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
-		B02ABC7A2B320DEF0059C1B5 /* Release */ = {
+		B02ABC7A2B320DEF0059C1B5 /* Release configuration for PBXNativeTarget "SnippetConverter" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -478,7 +412,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SnippetConverter/Preview Content\"";
-				DEVELOPMENT_TEAM = 7DJ7TXE967;
+				DEVELOPMENT_TEAM = TY9KXXP8XW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -491,18 +425,17 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bkunat.SnippetConverter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};
-		B02ABC7C2B320DEF0059C1B5 /* Debug */ = {
+		B02ABC7C2B320DEF0059C1B5 /* Debug configuration for PBXNativeTarget "SnippetConverterTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7DJ7TXE967;
+				DEVELOPMENT_TEAM = TY9KXXP8XW;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
@@ -514,14 +447,13 @@
 			};
 			name = Debug;
 		};
-		B02ABC7D2B320DEF0059C1B5 /* Release */ = {
+		B02ABC7D2B320DEF0059C1B5 /* Release configuration for PBXNativeTarget "SnippetConverterTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7DJ7TXE967;
+				DEVELOPMENT_TEAM = TY9KXXP8XW;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
@@ -533,13 +465,12 @@
 			};
 			name = Release;
 		};
-		B02ABC7F2B320DEF0059C1B5 /* Debug */ = {
+		B02ABC7F2B320DEF0059C1B5 /* Debug configuration for PBXNativeTarget "SnippetConverterUITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7DJ7TXE967;
+				DEVELOPMENT_TEAM = TY9KXXP8XW;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bkunat.SnippetConverterUITests;
@@ -550,13 +481,12 @@
 			};
 			name = Debug;
 		};
-		B02ABC802B320DEF0059C1B5 /* Release */ = {
+		B02ABC802B320DEF0059C1B5 /* Release configuration for PBXNativeTarget "SnippetConverterUITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7DJ7TXE967;
+				DEVELOPMENT_TEAM = TY9KXXP8XW;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bkunat.SnippetConverterUITests;
@@ -573,37 +503,33 @@
 		B02ABC4E2B320DED0059C1B5 /* Build configuration list for PBXProject "SnippetConverter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B02ABC762B320DEF0059C1B5 /* Debug */,
-				B02ABC772B320DEF0059C1B5 /* Release */,
+				B02ABC762B320DEF0059C1B5 /* Debug configuration for PBXProject "SnippetConverter" */,
+				B02ABC772B320DEF0059C1B5 /* Release configuration for PBXProject "SnippetConverter" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		B02ABC782B320DEF0059C1B5 /* Build configuration list for PBXNativeTarget "SnippetConverter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B02ABC792B320DEF0059C1B5 /* Debug */,
-				B02ABC7A2B320DEF0059C1B5 /* Release */,
+				B02ABC792B320DEF0059C1B5 /* Debug configuration for PBXNativeTarget "SnippetConverter" */,
+				B02ABC7A2B320DEF0059C1B5 /* Release configuration for PBXNativeTarget "SnippetConverter" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		B02ABC7B2B320DEF0059C1B5 /* Build configuration list for PBXNativeTarget "SnippetConverterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B02ABC7C2B320DEF0059C1B5 /* Debug */,
-				B02ABC7D2B320DEF0059C1B5 /* Release */,
+				B02ABC7C2B320DEF0059C1B5 /* Debug configuration for PBXNativeTarget "SnippetConverterTests" */,
+				B02ABC7D2B320DEF0059C1B5 /* Release configuration for PBXNativeTarget "SnippetConverterTests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		B02ABC7E2B320DEF0059C1B5 /* Build configuration list for PBXNativeTarget "SnippetConverterUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B02ABC7F2B320DEF0059C1B5 /* Debug */,
-				B02ABC802B320DEF0059C1B5 /* Release */,
+				B02ABC7F2B320DEF0059C1B5 /* Debug configuration for PBXNativeTarget "SnippetConverterUITests" */,
+				B02ABC802B320DEF0059C1B5 /* Release configuration for PBXNativeTarget "SnippetConverterUITests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
