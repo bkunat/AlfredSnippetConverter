@@ -55,14 +55,10 @@ The CLI accepts both directories (extracted from Alfred) and `.alfredsnippets` z
 
 ### Converting with the macOS App
 
-![header](https://github.com/user-attachments/assets/da493210-5e47-4d09-aca6-d2611a79e513)
-
 1. Open the macOS Snippet Converter app.
 2. Either:
    - **Drag and drop** your `.alfredsnippets` file or extracted directory into the app
    - **Click to browse** and select your snippets file or directory
 3. Click "Convert".
 
-<p align="center">
-  <img width="640" src="https://github.com/bkunat/AlfredSnippetConverter/assets/79861311/318d42f8-8823-4439-a4cb-60c50c2e5d6e"">
-</p>
+![header](https://github.com/user-attachments/assets/da493210-5e47-4d09-aca6-d2611a79e513)
