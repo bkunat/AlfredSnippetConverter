@@ -14,17 +14,17 @@ struct DropZoneView: View {
     
     var body: some View {
         VStack(spacing: 16) {
-            if viewModel.selectedPath == nil {
+            if viewModel.selectedPaths.isEmpty {
                 VStack(spacing: 12) {
                     Image(systemName: "folder.badge.plus")
                         .font(.system(size: 40))
                         .foregroundStyle(isTargeted ? Color.accentColor : Color.secondary)
                     
                     VStack(spacing: 4) {
-                        Text("Drop Alfred Snippets Here")
+                        Text("Drop One or More Snippet Collections")
                             .font(.headline)
                             .foregroundStyle(isTargeted ? Color.accentColor : Color.primary)
-                        Text("Folder or .alfredsnippets file")
+                        Text("Folders or .alfredsnippets files")
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                         Text("Or click to browse")
@@ -53,32 +53,46 @@ struct DropZoneView: View {
                     handleDrop(providers: providers)
                 }
             } else {
-                HStack {
-                    Image(systemName: "checkmark.circle.fill")
-                        .foregroundStyle(.green)
-                        .font(.title3)
-                    
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text("Selected:")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                        Text(viewModel.selectedPath!)
-                            .font(.body)
-                            .lineLimit(2)
+                VStack(spacing: 8) {
+                    // Header with collection count and controls
+                    HStack {
+                        HStack(spacing: 8) {
+                            Image(systemName: "checkmark.circle.fill")
+                                .foregroundStyle(.green)
+                                .font(.title3)
+                            
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("Selected Collections:")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                                Text("\(viewModel.selectedPaths.count) collection\(viewModel.selectedPaths.count == 1 ? "" : "s")")
+                                    .font(.body)
+                                    .fontWeight(.medium)
+                            }
+                        }
+                        
+                        Spacer()
+                        
+                        Button("Add More", systemImage: "plus") {
+                            viewModel.openFilePicker()
+                        }
+                        .buttonStyle(.borderless)
+                        
+                        Button("Clear All", systemImage: "xmark.circle") {
+                            viewModel.clearSelection()
+                        }
+                        .buttonStyle(.borderless)
+                        .foregroundStyle(.secondary)
                     }
                     
-                    Spacer()
-                    
-                    Button("Clear", systemImage: "xmark.circle") {
-                        viewModel.clearSelection()
+                    // List of selected collections
+                    LazyVStack(spacing: 4) {
+                        ForEach(viewModel.selectedPaths) { collection in
+                            CollectionRowView(collection: collection) {
+                                viewModel.removeCollection(collection)
+                            }
+                        }
                     }
-                    .buttonStyle(.borderless)
-                    .foregroundStyle(.secondary)
-                    
-                    Button("Change", systemImage: "folder") {
-                        viewModel.openFilePicker()
-                    }
-                    .buttonStyle(.borderless)
                 }
                 .padding()
                 .background(
@@ -93,25 +107,78 @@ struct DropZoneView: View {
         }
         .padding()
         .animation(.easeInOut(duration: 0.2), value: isTargeted)
-        .animation(.easeInOut(duration: 0.2), value: viewModel.selectedPath)
+        .animation(.easeInOut(duration: 0.2), value: viewModel.selectedPaths)
     }
     
     private func handleDrop(providers: [NSItemProvider]) -> Bool {
-        guard let provider = providers.first else { return false }
+        let group = DispatchGroup()
         
-        provider.loadItem(forTypeIdentifier: UTType.fileURL.identifier, options: nil) { item, error in
-            guard let data = item as? Data,
-                  let url = URL(dataRepresentation: data, relativeTo: nil) else {
-                return
-            }
-            
-            DispatchQueue.main.async {
-                if viewModel.validateDroppedPath(url.path) {
-                    viewModel.selectedPath = url.path
+        for provider in providers {
+            group.enter()
+            provider.loadItem(forTypeIdentifier: UTType.fileURL.identifier, options: nil) { item, error in
+                defer { group.leave() }
+                
+                guard let data = item as? Data,
+                      let url = URL(dataRepresentation: data, relativeTo: nil) else {
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    viewModel.addDroppedPath(url.path)
                 }
             }
         }
         
         return true
+    }
+}
+
+struct CollectionRowView: View {
+    let collection: SelectedCollection
+    let onRemove: () -> Void
+    
+    var body: some View {
+        HStack {
+            // Collection type icon
+            Image(systemName: collection.type == .directory ? "folder" : "doc.zipper")
+                .foregroundStyle(.blue)
+                .font(.title3)
+            
+            VStack(alignment: .leading, spacing: 2) {
+                Text(collection.displayName)
+                    .font(.body)
+                    .fontWeight(.medium)
+                    .lineLimit(1)
+                
+                HStack(spacing: 8) {
+                    Text(collection.type == .directory ? "Directory" : "Archive")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                    
+                    if let count = collection.snippetCount {
+                        Text("•")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                        Text("\(count) snippet\(count == 1 ? "" : "s")")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+            }
+            
+            Spacer()
+            
+            Button(action: onRemove) {
+                Image(systemName: "xmark.circle.fill")
+                    .foregroundStyle(.secondary)
+            }
+            .buttonStyle(.borderless)
+        }
+        .padding(.vertical, 8)
+        .padding(.horizontal, 12)
+        .background(
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color.secondary.opacity(0.1))
+        )
     }
 }
