@@ -8,11 +8,12 @@ Easily convert Alfred Text Snippets into macOS Text Replacements.
 
 ## Features
 
-- Simple conversion of Alfred snippets to macOS format
-- Support for both exported snippet directories and `.alfredsnippets` zip files
-- Drag-and-drop support in the macOS app
-- Command Line Interface (CLI) for advanced users
-- User-friendly macOS app for straightforward conversions
+- **Multiple Collection Processing**: Convert multiple Alfred snippet collections in a single operation
+- **Flexible Output Strategies**: 
+  - **Merge**: Combine all collections into a single plist file with collection prefixes
+  - **Separate**: Generate individual plist files for each collection
+- **Dual Input Support**: Process both exported snippet directories and `.alfredsnippets` zip files
+- **CLI**: Support for multiple inputs with output strategy control
 
 ## Requirements
 
@@ -30,9 +31,16 @@ You can either build the project from source using Xcode or download one of the 
    ```
 2. Build and run the snippet converter:
    ```bash
+   # Single collection
    swift run snippet-converter path-to-exported-snippets-collection-from-alfred
+   
+   # Multiple collections with merge strategy (default)
+   swift run snippet-converter collection1/ collection2.alfredsnippets collection3/
+   
+   # Multiple collections with separate output files
+   swift run snippet-converter collection1/ collection2.alfredsnippets --output-strategy separate
    ```
-   - Tip: Execute `swift run snippet-converter` to view all available options and arguments.
+   - Tip: Execute `swift run snippet-converter --help` to view all available options and arguments.
 
 ## Usage
 
@@ -45,13 +53,21 @@ You can either build the project from source using Xcode or download one of the 
 
 ### Converting with the CLI
 
-Run the following command in the terminal:
+The CLI supports both single and multiple collection processing:
 
 ```bash
+# Single collection (backward compatible)
 ./snippet-converter-cli path-to-exported-snippets-collection-from-alfred
-```
 
-The CLI accepts both directories (extracted from Alfred) and `.alfredsnippets` zip files directly.
+# Multiple collections - merge into single file (default)
+./snippet-converter-cli work-snippets/ personal.alfredsnippets team-snippets/
+
+# Multiple collections - create separate files
+./snippet-converter-cli work-snippets/ personal.alfredsnippets --output-strategy separate
+
+# Add collection prefixes to snippet keywords
+./snippet-converter-cli work-snippets/ personal.alfredsnippets --add-collection-prefix
+```
 
 ### Converting with the macOS App
 
