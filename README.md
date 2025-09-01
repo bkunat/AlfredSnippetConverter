@@ -33,13 +33,8 @@ You can either build the project from source using Xcode or download one of the 
    ```bash
    # Single collection
    swift run snippet-converter path-to-exported-snippets-collection-from-alfred
-   
-   # Multiple collections with merge strategy (default)
-   swift run snippet-converter collection1/ collection2.alfredsnippets collection3/
-   
-   # Multiple collections with separate output files
-   swift run snippet-converter collection1/ collection2.alfredsnippets --output-strategy separate
    ```
+   
    - Tip: Execute `swift run snippet-converter --help` to view all available options and arguments.
 
 ## Usage
