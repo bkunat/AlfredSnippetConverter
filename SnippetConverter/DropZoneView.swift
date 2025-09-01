@@ -86,10 +86,52 @@ struct DropZoneView: View {
                     }
                     
                     // List of selected collections
-                    LazyVStack(spacing: 4) {
-                        ForEach(viewModel.selectedPaths) { collection in
-                            CollectionRowView(collection: collection) {
-                                viewModel.removeCollection(collection)
+                    let collectionCount = viewModel.selectedPaths.count
+                    let shouldScroll = collectionCount > 3
+                    let maxHeight: CGFloat = shouldScroll ? 200 : CGFloat.infinity
+                    
+                    Group {
+                        if shouldScroll {
+                            VStack(spacing: 4) {
+                                if collectionCount > 3 {
+                                    HStack {
+                                        Text("Showing \(collectionCount) collections")
+                                            .font(.caption)
+                                            .foregroundStyle(.secondary)
+                                        Spacer()
+                                        Text("Scroll for more ↓")
+                                            .font(.caption)
+                                            .foregroundStyle(.secondary)
+                                    }
+                                }
+                                
+                                ScrollView(.vertical, showsIndicators: true) {
+                                    LazyVStack(spacing: 4) {
+                                        ForEach(viewModel.selectedPaths) { collection in
+                                            CollectionRowView(collection: collection) {
+                                                viewModel.removeCollection(collection)
+                                            }
+                                        }
+                                    }
+                                    .padding(4)
+                                }
+                                .frame(maxHeight: maxHeight)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .fill(Color.secondary.opacity(0.05))
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 8)
+                                                .stroke(Color.secondary.opacity(0.2), lineWidth: 1)
+                                        )
+                                )
+                            }
+                        } else {
+                            LazyVStack(spacing: 4) {
+                                ForEach(viewModel.selectedPaths) { collection in
+                                    CollectionRowView(collection: collection) {
+                                        viewModel.removeCollection(collection)
+                                    }
+                                }
                             }
                         }
                     }
@@ -174,6 +216,7 @@ struct CollectionRowView: View {
             }
             .buttonStyle(.borderless)
         }
+        .frame(height: 40)
         .padding(.vertical, 8)
         .padding(.horizontal, 12)
         .background(

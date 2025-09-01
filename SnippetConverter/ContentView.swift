@@ -38,20 +38,34 @@ struct ContentView: View {
             
             Button("Convert Snippets", systemImage: "arrow.right.circle.fill") {
                 let finalFileName = outputFileName + ".plist"
-                pendingConversion = (viewModel.selectedPath!, outputDestination, finalFileName)
                 
-                viewModel.convertFile(
-                    snippetExportPath: viewModel.selectedPath!,
-                    outputDestination: outputDestination,
-                    outputFileName: finalFileName
-                )
+                if viewModel.selectedPaths.count > 1 {
+                    // Use multi-collection converter
+                    let strategy = MultiSnippetConverter.OutputStrategy.merge(fileName: finalFileName)
+                    viewModel.convertMultipleCollections(
+                        outputDestination: outputDestination,
+                        outputFileName: finalFileName,
+                        outputStrategy: strategy,
+                        forceOverwrite: false
+                    )
+                } else if let singlePath = viewModel.selectedPath {
+                    // Use single-collection converter for backward compatibility
+                    pendingConversion = (singlePath, outputDestination, finalFileName)
+                    viewModel.convertFile(
+                        snippetExportPath: singlePath,
+                        outputDestination: outputDestination,
+                        outputFileName: finalFileName
+                    )
+                }
             }
             .buttonStyle(.borderedProminent)
             .tint(.accentColor)
-            .disabled(viewModel.selectedPath == nil)
+            .disabled(viewModel.selectedPaths.isEmpty)
         }
+        .frame(minWidth: 500, maxWidth: .infinity, minHeight: 400, maxHeight: .infinity)
         .padding()
         .background(Color(NSColor.controlBackgroundColor))
+        .animation(.easeInOut(duration: 0.3), value: viewModel.selectedPaths.count)
         .fileExistsAlert(error: $viewModel.error) {
             if let conversion = pendingConversion {
                 viewModel.convertFileWithForceOverwrite(
