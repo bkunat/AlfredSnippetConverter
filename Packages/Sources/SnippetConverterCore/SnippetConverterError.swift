@@ -12,6 +12,8 @@ enum SnippetConverterError: Error, Equatable {
     case directoryNotFound(path: String)
     case zipFileNotFound(path: String)
     case invalidArchiveContent(reason: String)
+    case noInputPathsProvided
+    case duplicateInputPaths
     
     static func == (lhs: SnippetConverterError, rhs: SnippetConverterError) -> Bool {
         switch (lhs, rhs) {
@@ -37,6 +39,10 @@ enum SnippetConverterError: Error, Equatable {
             return lhsPath == rhsPath
         case (.invalidArchiveContent(let lhsReason), .invalidArchiveContent(let rhsReason)):
             return lhsReason == rhsReason
+        case (.noInputPathsProvided, .noInputPathsProvided):
+            return true
+        case (.duplicateInputPaths, .duplicateInputPaths):
+            return true
         default:
             return false
         }
@@ -68,6 +74,10 @@ extension SnippetConverterError: LocalizedError {
             return NSLocalizedString("Zip file not found: \"\(path)\"", comment: "Zip file not found error")
         case .invalidArchiveContent(let reason):
             return NSLocalizedString("Invalid archive content: \(reason)", comment: "Invalid archive content error")
+        case .noInputPathsProvided:
+            return NSLocalizedString("No input paths provided. Please specify one or more directories or .alfredsnippets files.", comment: "No input paths provided error")
+        case .duplicateInputPaths:
+            return NSLocalizedString("Duplicate input paths provided. Please ensure all paths are unique.", comment: "Duplicate input paths error")
         }
     }
 }

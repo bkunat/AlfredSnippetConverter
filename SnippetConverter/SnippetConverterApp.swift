@@ -14,6 +14,6 @@ struct SnippetConverterApp: App {
             ContentView()
         }
         .windowResizability(.contentSize)
-        .defaultSize(width: 500, height: 600)
+        .defaultSize(width: 550, height: 600)
     }
 }
